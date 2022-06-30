@@ -27,4 +27,9 @@ public class UnicornModule extends NativeUnicornSpec {
     public void multiply(double a, double b, Promise promise) {
         promise.resolve(a * b);
     }
+
+    @ReactMethod
+    public double add(double a, double b) {
+      return a+b;
+    }
 }
