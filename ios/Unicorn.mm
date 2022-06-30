@@ -19,6 +19,13 @@ RCT_REMAP_METHOD(multiply,
   resolve(result);
 }
 
+RCT_REMAP_BLOCKING_SYNCHRONOUS_METHOD(add,
+                                      NSNumber *,
+                                      addWithA:(double)a  withB:(double)b)
+{
+    return [NSNumber numberWithDouble:(a + b)];
+}
+
 // Don't compile this code when we build for the old architecture.
 #ifdef RCT_NEW_ARCH_ENABLED
 - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:

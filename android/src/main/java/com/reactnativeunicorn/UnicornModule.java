@@ -23,8 +23,11 @@ public class UnicornModule extends NativeUnicornSpec {
 
     // Example method
     // See https://reactnative.dev/docs/native-modules-android
-    @ReactMethod
     public void multiply(double a, double b, Promise promise) {
         promise.resolve(a * b);
+    }
+
+    public double add(double a, double b) {
+      return a+b;
     }
 }
