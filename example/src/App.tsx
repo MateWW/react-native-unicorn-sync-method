@@ -1,19 +1,12 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { add, multiply } from 'react-native-unicorn';
+import { StyleSheet, View } from 'react-native';
+import { UnicornView } from 'react-native-unicorn';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Multiply result: {result}</Text>
-      <Text>Add result: {add(8, 2)}</Text>
+      <UnicornView color="#92a852" style={styles.box} />
     </View>
   );
 }
@@ -25,8 +18,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
-    width: 60,
-    height: 60,
+    marginTop: 100,
+    width: 200,
+    height: 200,
     marginVertical: 20,
   },
 });
