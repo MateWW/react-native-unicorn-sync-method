@@ -35,6 +35,17 @@ android {
     targetSdkVersion getExtOrIntegerDefault('targetSdkVersion')
     buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
   }
+
+  sourceSets {
+    main {
+      if (isNewArchitectureEnabled()) {
+        java.srcDirs += ['src/newarchitecture']
+      } else {
+        java.srcDirs += ['src/oldarchitecture']
+      }
+    }
+  }
+
   buildTypes {
     release {
       minifyEnabled false
@@ -131,7 +142,7 @@ dependencies {
 if (isNewArchitectureEnabled()) {
   react {
     jsRootDir = file("../src/")
-    libraryName = "Unicorn"
+    libraryName = "UnicornView"
     codegenJavaPackageName = "com.reactnativeunicorn"
   }
 }

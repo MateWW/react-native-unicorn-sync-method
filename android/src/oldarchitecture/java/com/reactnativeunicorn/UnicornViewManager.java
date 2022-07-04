@@ -8,7 +8,6 @@ import android.graphics.Color;
 
 public class UnicornViewManager extends SimpleViewManager<UnicornView> {
 
-  public static final String NAME = "UnicornView";
   ReactApplicationContext mCallerContext;
 
   public UnicornViewManager(ReactApplicationContext reactContext) {
@@ -17,16 +16,16 @@ public class UnicornViewManager extends SimpleViewManager<UnicornView> {
 
   @Override
   public String getName() {
-    return NAME;
+    return UnicornViewManagerImpl.NAME;
   }
 
   @Override
   public UnicornView createViewInstance(ThemedReactContext context) {
-    return new UnicornView(context);
+    return UnicornViewManagerImpl.createViewInstance(context);
   }
 
   @ReactProp(name = "color")
   public void setColor(UnicornView view, String color) {
-    view.setBackgroundColor(Color.parseColor(color));
+    UnicornViewManagerImpl.setColor(view, color);
   }
 }

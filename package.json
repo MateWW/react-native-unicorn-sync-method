@@ -152,8 +152,8 @@
   "codegenConfig": {
     "libraries": [
       {
-        "name": "RNUnicornSpec",
-        "type": "modules",
+        "name": "RNUnicornViewSpec",
+        "type": "components",
         "jsSrcsDir": "src"
       }
     ]
