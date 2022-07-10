@@ -39,9 +39,9 @@ android {
   sourceSets {
     main {
       if (isNewArchitectureEnabled()) {
-        java.srcDirs += ['src/newarchitecture']
+        java.srcDirs += ['src/newarchitecture/java']
       } else {
-        java.srcDirs += ['src/oldarchitecture']
+        java.srcDirs += ['src/oldarchitecture/java']
       }
     }
   }
@@ -142,7 +142,7 @@ dependencies {
 if (isNewArchitectureEnabled()) {
   react {
     jsRootDir = file("../src/")
-    libraryName = "UnicornView"
+    libraryName = "unicornview"
     codegenJavaPackageName = "com.reactnativeunicorn"
   }
 }

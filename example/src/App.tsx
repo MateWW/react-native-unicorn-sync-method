@@ -1,12 +1,18 @@
 import * as React from 'react';
 
-import { StyleSheet, View } from 'react-native';
-import { UnicornView } from 'react-native-unicorn';
+import { Button, StyleSheet, View } from 'react-native';
+import {UnicornView, Commands} from 'react-native-unicorn';
+
+function getRandomColor() {
+  return [Math.random(), Math.random(), Math.random()].map((val) => Math.round(val*255).toString(16).padStart(2,'0')).join('').padStart(7,'#');
+}
 
 export default function App() {
+  const ref = React.useRef(UnicornView);
   return (
     <View style={styles.container}>
-      <UnicornView color="#92a852" style={styles.box} />
+      <UnicornView ref={ref} color="#990011" style={styles.box} />
+      <Button title='Change color' onPress={() => Commands.changeBackgroundColor(ref.current, getRandomColor())}/>
     </View>
   );
 }

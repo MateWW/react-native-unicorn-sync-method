@@ -2,8 +2,8 @@ import { requireNativeComponent } from 'react-native'
 
 const isFabricEnabled = global.nativeFabricUIManager != null;
 
-const unicornView = isFabricEnabled ?
-    require("./UnicornViewNativeComponent").default :
-    requireNativeComponent("UnicornView")
+const UnicornNative = isFabricEnabled ? require("./UnicornViewNativeComponent") : null
 
-export default unicornView;
+export const UnicornView = UnicornNative ? UnicornNative.default: requireNativeComponent("UnicornView")
+
+export const Commands = UnicornNative ? UnicornNative.Commands: {}

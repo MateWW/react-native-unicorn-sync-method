@@ -34,7 +34,7 @@ LOCAL_SHARED_LIBRARIES := \
   libglog \
   libjsi \
   libreact_codegen_rncore \
-  libreact_codegen_Unicorn \
+  libreact_codegen_unicornview \
   libreact_debug \
   libreact_nativemodule_core \
   libreact_render_componentregistry \
