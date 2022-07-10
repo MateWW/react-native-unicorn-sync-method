@@ -11,7 +11,7 @@ export default function App() {
   const ref = React.useRef(UnicornView);
   return (
     <View style={styles.container}>
-      <UnicornView ref={ref} color="#990011" style={styles.box} />
+      <UnicornView ref={ref} color="#339022" style={styles.box} />
       <Button title='Change color' onPress={() => Commands.changeBackgroundColor(ref.current, getRandomColor())}/>
     </View>
   );
