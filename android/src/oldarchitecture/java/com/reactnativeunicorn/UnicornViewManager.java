@@ -1,7 +1,5 @@
 package com.reactnativeunicorn;
 
-import android.widget.FrameLayout;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
